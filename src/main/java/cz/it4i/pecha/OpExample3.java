@@ -28,7 +28,7 @@ public class OpExample3<T extends RealType<T> & NativeType<T>> extends AbstractO
     /*
      * Add value to copied image by using Cursor, RandomAccess (generic approach)
      */
-    @SuppressWarnings({"unchecked"})
+    @SuppressWarnings("unchecked")
     public void run()
     {
         //shortcut to reach the ops functionalities

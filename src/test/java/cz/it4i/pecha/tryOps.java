@@ -17,7 +17,6 @@ public class tryOps
 		final ImageJ ij = new net.imagej.ImageJ();
 		ij.ui().showUI();
 
-
 		String narfResult = (String) ij.op().run("OpNarf", "Put some trousers on");
 		System.out.println(narfResult + "\n");
 
@@ -27,6 +26,8 @@ public class tryOps
 
 		//working with resources
 		URL url = tryOps.class.getResource("/narf.jpg");
+
+		@SuppressWarnings("unchecked")
 		Img<FloatType> img = (Img<FloatType>) ij.io().open(url.getPath());
 		ij.ui().show(img);
 
