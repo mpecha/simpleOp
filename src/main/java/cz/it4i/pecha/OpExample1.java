@@ -24,6 +24,7 @@ public class OpExample1<T extends RealType<T> & NativeType<T>> extends AbstractO
     private Img<T> outImg;
 
     @Override
+    @SuppressWarnings({"unchecked"})
     public void run()
     {
         final OpEnvironment ops = this.ops();
@@ -35,7 +36,6 @@ public class OpExample1<T extends RealType<T> & NativeType<T>> extends AbstractO
         final T val = inImg.firstElement().createVariable();
         val.setReal(inVal);
 
-        //TODO solve unchecked cast?
         outImg = (Img<T>) ops.run("math.add", outImg, val);
     }
 }
